@@ -1,0 +1,10 @@
+{
+    "assets": [
+		{
+		    "name": "app-filtering",
+		    "locations": {
+		        "webapp": "/static/assets/js/filtering.js"
+		    }
+		}
+    ]
+}

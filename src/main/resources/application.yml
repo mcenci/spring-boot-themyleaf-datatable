@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: web
+  jmx:
+    enabled: false
+  thymeleaf:
+    cache: false
+    enabled: true
+  resources:
+    chain:
+      cache: true
+      enabled: true
+      strategy:
+        fixed:
+          enabled: true
+          paths:
+          - /**
+          - /*.js
+          - /*.css
+          - /*.map
+          version: test
+        content:
+          enabled: true
+      html-application-cache: true      
+    cache-period: 600  
+      
+#Datasource Web    
+web:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:49161:xe
+    username: web
+    password: web
+    driver-class-name: oracle.jdbc.OracleDriver
+#Datasource Auth
+auth: 
+  datasource: 
+    url: jdbc:oracle:thin:@localhost:49161:xe
+    username: auth
+    password: auth
+    driver-class-name: oracle.jdbc.OracleDriver    
+    
+logging:
+  level:
+    com.netsgroup.webapp.mapper.auth.AuthenticationMapper: TRACE
+    com.netsgroup.webapp.mapper.web.WebMapper: TRACE
+    org.mybatis: DEBUG
+    org.springframework.transaction: DEBUG

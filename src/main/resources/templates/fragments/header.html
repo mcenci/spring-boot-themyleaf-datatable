@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+      
+<head>
+	<meta charset="UTF-8" />
+<title th:text="${name}">Test</title>
+</head>
+<body>
+	<h1 th:text="${name}">Test Application</h1>
+	<div>
+		<p th:text="${customer}"> Customer Test</p>
+		<ul>
+		<th:block th:if="${customer.size() >= 0}">
+			<th:block th:each="user : ${users}">
+				<li th:text="${user}"> Michele</li>
+			</th:block>
+		</th:block>
+		</ul>
+	</div> 
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head></head>
+
+<body>
+	<footer class="footer" th:fragment="copy"> 
+		<div class="container" th:text="'2000 - '+${#calendars.year(#calendars.createNow())}+' N&amp;TS Group'">
+			&copy; 2000 - 2011 N&amp;TS Group
+		</div> 
+	</footer>
+</body>
+
+</html>

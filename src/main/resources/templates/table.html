@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html 	xmlns:th="http://www.thymeleaf.org"
+		xmlns:dt="http://github.com/dandelion/datatables">
+      
+<head lang="it" th:lang="${#locale}">
+<th:block th:include="fragments/meta :: meta" />
+<th:block th:include="fragments/css :: css" />
+<title th:text="${name}">Test</title>
+</head>
+<body>
+	<div th:replace="fragments/navbar :: navbar"></div>
+	<div class="container">
+	  <div class="row-fluid well">
+         <div class="span6">
+            Firstname: <div id="nomeFilter"></div>
+            Lastname: <div id="cognomeFilter"></div>
+            City: <div id="etaFilter"></div>
+<!--             Company: <div id="companyFilter"></div> -->
+         </div>
+         <div class="span6">
+            <a id="filterButton" class="btn btn-large btn-primary">Apply filters</a>
+            <a id="filterClearButton" class="btn btn-large btn-inverse">Clear filters</a>
+         </div>
+      </div>
+
+      <div class="row-fluid">
+         <div class="span12">
+
+            <table id="myTableId" dt:table="true" dt:url="@{/ajax/users}" dt:serverside="true" dt:filterplaceholder="none" dt:filterSelector="#filterButton" dt:filterClearSelector="#filterClearButton" class="display">
+               <thead>
+                  <tr>
+                     <th dt:property="id" dt:name="id">Id</th>
+                     <th dt:property="nome" dt:filterable="true" dt:selector="nomeFilter">Firstname</th>
+                     <th dt:property="cognome" dt:filterable="true"  dt:selector="cognomeFilter">Lastname</th>
+                     <th dt:property="eta" dt:filterable="true" dt:selector="etaFilter">City</th>
+                     <th dt:property="indirizzo">Mail</th>
+<!--                      <th dt:property="company.name" dt:filterable="true" dt:filterType="select" dt:filterValues="app-filtering#predefinedValues" dt:selector="companyFilter">Company</th> -->
+                  </tr>
+               </thead>
+            </table>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

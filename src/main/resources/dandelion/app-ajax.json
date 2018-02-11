@@ -1,0 +1,9 @@
+{
+    "assets": [
+		{
+		    "locations": {
+		        "webapp": "/static/assets/js/ajax.js"
+		    }
+		}
+    ]
+}
